@@ -188,14 +188,18 @@ with tab2:
             st.success(f"Prediction: No fraud detected with a probability of {1 - prediction_proba:.2f}")
 
     # Display a random sample from the dataset with a refresh button
-    st.subheader("Sample Data")
-    if st.button("Refresh Sample"):
-        sample_data = data.sample(n=5)  # Display 5 random rows from the dataset
-    else:
-        sample_data = data.sample(n=5)
-
-    st.write("Here is a random sample from the dataset:")
-    st.dataframe(sample_data)
+    @st.cache_data
+    def load_data():
+        try:
+            data = pd.read_csv('creditcard.csv')
+            if data.empty:
+                st.error("The dataset is empty. Please check the file content.")
+            return data
+        except FileNotFoundError:
+            st.error("The dataset file 'creditcard.csv' was not found.")
+        except Exception as e:
+            st.error(f"An error occurred while loading the data: {str(e)}")
+        return None
 
 # Page 3: Provide Feedback
 with tab3:
