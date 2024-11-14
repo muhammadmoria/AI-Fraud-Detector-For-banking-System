@@ -190,10 +190,9 @@ with tab2:
     # Display a random sample from the dataset with a refresh button
     st.subheader("Sample Data")
     if st.button("Refresh Sample"):
-        da=load_data()
-        sample_data = da.sample(n=5)  # Display 5 random rows from the dataset
+        sample_data = load_data(5)  # Display 5 random rows from the dataset
     else:
-        sample_data = da.sample(n=5)
+        sample_data = load_data(5) 
 
     st.write("Here is a random sample from the dataset:")
     st.dataframe(sample_data)
