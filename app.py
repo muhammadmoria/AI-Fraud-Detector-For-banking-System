@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 import joblib
 from datetime import datetime
+import random
 
-# Set page configuration
 st.set_page_config(
     page_title="AI-Powered Fraud Detection System for Banking",
     page_icon="📊",
@@ -17,43 +17,83 @@ model = joblib.load('fraud_detection_model.pkl')
 # Load the dataset
 @st.cache_data
 def load_data():
-    try:
-        data = pd.read_csv('creditcard.csv')
-        if data.empty:
-            st.error("The dataset is empty. Please check the file content.")
-        return data
-    except FileNotFoundError:
-        st.error("The dataset file 'creditcard.csv' was not found.")
-    except Exception as e:
-        st.error(f"An error occurred while loading the data: {str(e)}")
-    return None
+    data = pd.read_csv('creditcard.csv')
+    return data
 
 # Initialize dataset
 data = load_data()
 
-# Page Layout
-st.markdown("""<style>
-    .main-title {
-        font-size: 2.5em;
-        font-weight: bold;
-        color: #2C3E50;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    .section-title {
-        font-size: 1.8em;
-        color: #3498DB;
-        font-weight: bold;
-        margin-top: 30px;
-        text-align: left;
-    }
-    .section-content {
-        text-align: center;
-    }
-</style>""", unsafe_allow_html=True)
+st.markdown("""
+    <style>
+        /* Main Title */
+        .main-title {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2C3E50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        /* Section Titles */
+        .section-title {
+            font-size: 1.8em;
+            color: #3498DB;
+            font-weight: bold;
+            margin-top: 30px;
+            text-align: left;
+        }
+        /* Section Content */
+        .section-content{
+            text-align: center;
+        }
+        /* Home Page Content */
+        .intro-title {
+            font-size: 2.5em;
+            color: #2C3E50;
+            font-weight: bold;
+            text-align: center;
+        }
+        .intro-subtitle {
+            font-size: 1.2em;
+            color: #34495E;
+            text-align: center;
+        }
+        .content {
+            font-size: 1em;
+            color: #7F8C8D;
+            text-align: justify;
+            line-height: 1.6;
+        }
+        .highlight {
+            color: #2E86C1;
+            font-weight: bold;
+        }
+        /* Recommendation Titles and Descriptions */
+        .recommendation-title {
+            font-size: 22px;
+            color: #2980B9;
+        }
+        .recommendation-desc {
+            font-size: 16px;
+            color: #7F8C8D;
+        }
+        /* Separator Line */
+        .separator {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-top: 1px solid #BDC3C7;
+        }
+        /* Footer */
+        .footer {
+            font-size: 14px;
+            color: #95A5A6;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
-st.markdown("""# 📊 Welcome to the AI-Powered Fraud Detection System for Banking""")
-st.markdown("""Your one-stop solution for fraud prevention! 🚀""")
+st.markdown("""# 📊 Welcome to the AI-Powered Fraud Detection System for Banking  """)
+st.markdown(""" Your one-stop solution for fraud prevention! 🚀""")
 
 tab1, tab2, tab3 = st.tabs(["🏠Home", "📋Predict Fraud-Detection", "✍️ Provide Feedback"])
 
@@ -74,9 +114,11 @@ with tab1:
         ## 💻 Technologies Used  
         - **Languages & Libraries**: Python, Pandas, Scikit-Learn, Joblib for model persistence, and Streamlit for user interaction.
         - **Deployment**: Streamlit app for user-friendly, real-time fraud detection.
+
+        Created by Muhammad Dawood, utilizing machine learning to enhance security in financial systems and protect users from fraud. 🌐  
+        **Gmail**: muhammaddawoodmoria@gmail.com
     """)
 
-# Page 2: Predict Fraud Detection
 # Page 2: Predict Fraud Detection
 with tab2:
     st.title("🔍 Predict Fraud Detection")
@@ -147,16 +189,14 @@ with tab2:
 
     # Display a random sample from the dataset with a refresh button
     st.subheader("Sample Data")
-    if data is not None and not data.empty:
-        if st.button("Refresh Sample"):
-            sample_data = data.sample(n=5)  # Display 5 random rows from the dataset
-        else:
-            sample_data = data.sample(n=5)
-
-        st.write("Here is a random sample from the dataset:")
-        st.dataframe(sample_data)
+    if st.button("Refresh Sample"):
+        da=load_data()
+        sample_data = da.sample(n=5)  # Display 5 random rows from the dataset
     else:
-        st.error("No data available to sample. Please check the dataset.")
+        sample_data = da.sample(n=5)
+
+    st.write("Here is a random sample from the dataset:")
+    st.dataframe(sample_data)
 
 # Page 3: Provide Feedback
 with tab3:
