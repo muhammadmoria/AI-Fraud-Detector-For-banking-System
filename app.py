@@ -77,6 +77,7 @@ with tab1:
     """)
 
 # Page 2: Predict Fraud Detection
+# Page 2: Predict Fraud Detection
 with tab2:
     st.title("🔍 Predict Fraud Detection")
     st.write("Fill in the transaction details below to check for fraud.")
