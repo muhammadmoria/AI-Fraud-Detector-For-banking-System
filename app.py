@@ -191,7 +191,7 @@ with tab2:
     @st.cache_data
     def load_data():
         try:
-            data = pd.read_csv('creditcard.csv')
+            data = pd.read_csv('./creditcard.csv')
             if data.empty:
                 st.error("The dataset is empty. Please check the file content.")
             return data
