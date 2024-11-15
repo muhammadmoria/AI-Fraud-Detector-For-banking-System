@@ -422,14 +422,7 @@ with tab2:
             st.success(f"Prediction: No fraud detected with a probability of {1 - prediction_proba:.2f}")
 
     # Display a random sample from the dataset with a refresh button
-    st.subheader("Sample Data")
-    if st.button("Refresh Sample"):
-        sample_data = data.sample(n=5)  # Display 5 random rows from the dataset
-    else:
-        sample_data = data.sample(n=5)
 
-    st.write("Here is a random sample from the dataset:")
-    st.dataframe(sample_data)
 
 # Page 3: Provide Feedback
 with tab3:
