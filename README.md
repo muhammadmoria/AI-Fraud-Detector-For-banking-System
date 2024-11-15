@@ -1,7 +1,7 @@
 <div align="center">
   <h1>🛡️ AI Fraud Detection System</h1>
   <h3>Advanced Machine Learning for Detecting Fraudulent Activities</h3>
-  <img src="./yes.png" alt="Empty Image" width="500" height="500">
+  <img src="./yes.png" alt="Empty Image" width="300" height="300">
 
 
   <hr>
