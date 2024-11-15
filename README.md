@@ -1,6 +1,9 @@
 <div align="center">
-  <h1>🛡️ **AI Fraud Detection System**</h1>
+  <h1>🛡️ AI Fraud Detection System</h1>
   <h3>Advanced Machine Learning for Detecting Fraudulent Activities</h3>
+  <img src="./yes.png" alt="Empty Image" width="300" height="200">
+
+
   <hr>
 
   <p align="center">
@@ -43,7 +46,7 @@ Fraud detection is critical for securing financial transactions, preventing data
 - **Interactive Web App**: A user-friendly interface for testing the fraud detection system with sample data in real time.
 
 <p align="center">
-  <a href="https://ai-fraud-detection-system-dawood-moria.streamlit.app/" target="_blank">
+  <a href="https://ai-fraud-detector-for-banking-system-by-dawood-moria.streamlit.app/" target="_blank">
     <img src="https://img.shields.io/badge/-Explore%20The%20App-%2331A8FF?style=for-the-badge">
   </a>
 </p>
