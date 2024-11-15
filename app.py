@@ -6,7 +6,7 @@ import random
 
 st.set_page_config(
     page_title="AI-Powered Fraud Detection System for Banking",
-    page_icon=" 🚨",
+    page_icon="🖥️",
     layout="centered",
     initial_sidebar_state="expanded"
 )
