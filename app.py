@@ -5,8 +5,8 @@ from datetime import datetime
 import random
 
 st.set_page_config(
-    page_title="AI-Powered Fraud Detection System for Banking",
-    page_icon="🖥️",
+    page_title="DefrauderAI ",
+    page_icon="🧠⚠️",
     layout="centered",
     initial_sidebar_state="expanded"
 )
@@ -162,8 +162,8 @@ st.markdown("""
             }
         }
     </style>
-""", unsafe_allow_html=True)
-
+""", unsafe_allow_html=True)DefrauderAI
+st.markdown("""<div class="main-title"> DefrauderAI 🧠⚠️</div>""", unsafe_allow_html=True)
 st.markdown("""<div class="main-title"> 🚨 AI-Powered Fraud Detection System for Banking </div>""", unsafe_allow_html=True)
 
 tab1, tab2, tab3 = st.tabs(["🏠 Home", "📋 Recommender", "💬 Feedback"])
@@ -182,7 +182,7 @@ with tab1:
             <div class="card">
                 <h3 class="section-title">🚀 Project Overview</h3>
                 <p>
-            This AI-powered fraud detection system uses machine learning to identify fraudulent banking transactions in real-time, helping financial institutions prevent 		fraud effectively.
+            This AI-powered fraud detection system named as DefrauderAI uses machine learning to identify fraudulent banking transactions in real-time, helping financial institutions prevent fraud effectively.
                 </p>
             </div>
                     <div class="card">
