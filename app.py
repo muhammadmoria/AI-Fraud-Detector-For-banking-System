@@ -162,7 +162,7 @@ st.markdown("""
             }
         }
     </style>
-""", unsafe_allow_html=True)DefrauderAI
+""", unsafe_allow_html=True)
 st.markdown("""<div class="main-title"> DefrauderAI 🧠⚠️</div>""", unsafe_allow_html=True)
 st.markdown("""<div class="main-title"> 🚨 AI-Powered Fraud Detection System for Banking </div>""", unsafe_allow_html=True)
 
